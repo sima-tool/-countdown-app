@@ -1,0 +1,94 @@
+body {
+    background-color: #fdf8e1; /* 明るい砂色 */
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .header h1 {
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 4rem;
+    color: #c52f2f; /* 首里城のような赤 */
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+    margin: 0;
+  }
+  .countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .countdown-box {
+    background-color: #c52f2f; /* 赤 */
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border: 3px solid #a22525;
+  }
+  .date {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  .days {
+    font-size: 5em;
+    font-weight: bold;
+    color: #ffd700; /* 黄色 */
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+  }
+  .unit {
+    font-size: 1.5em;
+    color: #ffd700;
+  }
+  .details-container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .info-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 2px solid #ddd;
+  }
+  .info-card h2 {
+    font-size: 1.8em;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    color: #c52f2f;
+    border-bottom: 3px solid #ffd700;
+    padding-bottom: 10px;
+    margin-top: 0;
+  }
+  .info-card ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+  .info-card li {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  .info-card li strong {
+    color: #333;
+  }
+  .info-card .sub-list {
+    padding-left: 20px;
+    margin-top: 8px;
+    list-style-type: '・';
+  }
+  .info-card .sub-list li {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }

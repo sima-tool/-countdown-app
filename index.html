@@ -19,17 +19,14 @@
   <div class="countdown-box">
     <div class="date">第1弾: 10/3まで</div>
     <div class="days" id="countdown1"></div>
-    <div class="unit">日</div>
   </div>
   <div class="countdown-box">
     <div class="date">第2弾: 10/17まで</div>
     <div class="days" id="countdown2"></div>
-    <div class="unit">日</div>
   </div>
   <div class="countdown-box">
     <div class="date">第3弾: 10/31まで</div>
     <div class="days" id="countdown3"></div>
-    <div class="unit">日</div>
   </div>
 </div>
 
@@ -64,20 +61,54 @@
 </div>
 
 <script>
-  function countdown(elementId, targetDate) {
-    const now = new Date();
-    const target = new Date(now.getFullYear(), targetDate.getMonth(), targetDate.getDate());
-    if (now > target) {
-      target.setFullYear(target.getFullYear() + 1);
-    }
-    const diff = target.getTime() - now.getTime();
-    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-    document.getElementById(elementId).textContent = days;
+  function countdown(elementId, targetMonth, targetDay, targetHour, targetMinute) {
+      const updateCountdown = () => {
+          const now = new Date();
+          let target = new Date(now.getFullYear(), targetMonth - 1, targetDay, targetHour, targetMinute, 0); // Month is 0-indexed
+
+          // Rollover logic: If current time is past target time for this year, set to next year
+          if (now > target) {
+              target.setFullYear(target.getFullYear() + 1);
+          }
+
+          const diff = target.getTime() - now.getTime();
+
+          // Calculate days, hours, minutes, seconds
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+          // Format output with leading zeros
+          const formattedHours = String(hours).padStart(2, '0');
+          const formattedMinutes = String(minutes).padStart(2, '0');
+          const formattedSeconds = String(seconds).padStart(2, '0');
+
+          // Update the display
+          const displayElement = document.getElementById(elementId);
+          if (days > 0) {
+              displayElement.textContent = `${days}日 ${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+          } else if (diff > 0) { // Only show time if less than a day, but still positive
+              displayElement.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+          } else { // Countdown finished
+              displayElement.textContent = `00:00:00`;
+          }
+
+          // If countdown finishes, clear interval
+          if (diff < 0) {
+              clearInterval(interval);
+          }
+      };
+
+      // Run immediately and then every second
+      updateCountdown();
+      const interval = setInterval(updateCountdown, 1000);
   }
 
-  countdown('countdown1', new Date(2025, 9, 3)); // 10月3日
-  countdown('countdown2', new Date(2025, 9, 17)); // 10月17日
-  countdown('countdown3', new Date(2025, 9, 31)); // 10月31日
+  // Call countdown for each event
+  countdown('countdown1', 10, 3, 16, 0); // 10月3日 16:00
+  countdown('countdown2', 10, 17, 16, 0); // 10月17日 16:00
+  countdown('countdown3', 10, 31, 16, 0); // 10月31日 16:00
 </script>
 
 <footer>

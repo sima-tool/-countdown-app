@@ -177,3 +177,44 @@ footer p {
   width: 30px; /* Icon size */
   height: 30px;
 }
+
+.game-section {
+  text-align: center; /* Center text and inline-block elements */
+  margin: 0 auto 40px auto; /* Center the section itself, add bottom margin */
+  max-width: 640px; /* Max width for the game section */
+  padding: 20px;
+  background: rgba(22, 33, 62, 0.5); /* Glassmorphism background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#gameCanvas {
+  display: block; /* Make canvas a block element to apply margin: auto */
+  margin: 20px auto; /* Center the canvas within its parent */
+  border: 2px solid #e580ff; /* Add a border for visibility */
+  border-radius: 8px;
+}
+
+#gameInfo {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+#startButton {
+  padding: 10px 20px;
+  font-size: 1.1em;
+  background-color: #e580ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#startButton:hover {
+  background-color: #c060d0;
+}

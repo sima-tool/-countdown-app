@@ -228,5 +228,7 @@ footer p {
   /* Optionally adjust canvas margin if needed */
   #gameCanvas {
     margin: 15px auto;
+    width: 100%; /* Make canvas responsive */
+    height: auto; /* Maintain aspect ratio */
   }
 }

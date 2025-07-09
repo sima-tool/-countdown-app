@@ -63,7 +63,7 @@
 <section class="game-section">
   <h2>ブロック崩しゲーム</h2>
   <div id="gameInfo">スコア: <span id="score">0</span> | 残機: <span id="lives">3</span></div>
-  <canvas id="gameCanvas" width="600" height="400"></canvas>
+  <canvas id="gameCanvas"></canvas>
   <button id="startButton">ゲーム開始</button>
 </section>
 
@@ -122,6 +122,10 @@
   // Breakout Game Logic
   const canvas = document.getElementById('gameCanvas');
   const ctx = canvas.getContext('2d');
+
+  // Set canvas dimensions for game logic
+  canvas.width = 600;
+  canvas.height = 400;
   const scoreDisplay = document.getElementById('score');
   const livesDisplay = document.getElementById('lives');
   const startButton = document.getElementById('startButton');
@@ -268,9 +272,12 @@
   }
 
   // Mouse/Touch control for paddle
-  document.addEventListener('mousemove', (e) => {
+  canvas.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
-    const relativeX = e.clientX - rect.left;
+    // Calculate scale factor to map mouse coordinates to canvas internal coordinates
+    const scaleX = canvas.width / rect.width;
+    const relativeX = (e.clientX - rect.left) * scaleX;
+
     if (relativeX > 0 && relativeX < canvas.width) {
       paddleX = relativeX - paddleWidth / 2;
     }

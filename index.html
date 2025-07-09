@@ -1,92 +1,80 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>感謝祭カウントダウン</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Noto Sans JP', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #8a2387, #e94057, #f27121);
-            color: white;
-            overflow: hidden;
-        }
-
-        .container {
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        h1 {
-            font-size: 4.5vw;
-            margin-bottom: 0;
-        }
-
-        #countdown-days {
-            font-size: 25vw;
-            font-weight: 900;
-            line-height: 1.1;
-        }
-
-        h2 {
-            font-size: 4.5vw;
-            margin-top: 0;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.85); }
-            to { opacity: 1; transform: scale(1); }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カウントダウン</title>
+<style>
+  body {
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .countdown-box {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+  }
+  .date {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  .days {
+    font-size: 5em;
+    font-weight: bold;
+    color: #00ff00;
+  }
+  .unit {
+    font-size: 1.5em;
+    color: #00ff00;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>感謝祭まであと</h1>
-        <div id="countdown-days"></div>
-        <h2>日</h2>
-    </div>
-    <script>
-        function calculateThanksgivingCountdown() {
-            const countdownElement = document.getElementById('countdown-days');
-            
-            // 感謝祭は毎年11月の第4木曜日
-            const getThanksgivingDate = (year) => {
-                const novemberFirst = new Date(year, 10, 1);
-                const dayOfWeek = novemberFirst.getDay(); // 0=Sun, 1=Mon, ..., 4=Thu
-                // 最初の木曜日を見つける
-                const firstThursday = 1 + (4 - dayOfWeek + 7) % 7;
-                // 4番目の木曜日
-                const thanksgivingDay = firstThursday + 21;
-                return new Date(year, 10, thanksgivingDay);
-            };
 
-            const today = new Date();
-            // 時刻をリセットして日付のみで比較
-            today.setHours(0, 0, 0, 0);
+<div class="container">
+  <div class="countdown-box">
+    <div class="date">10/03まであと</div>
+    <div class="days" id="countdown1"></div>
+    <div class="unit">日</div>
+  </div>
+  <div class="countdown-box">
+    <div class="date">10/17まであと</div>
+    <div class="days" id="countdown2"></div>
+    <div class="unit">日</div>
+  </div>
+  <div class="countdown-box">
+    <div class="date">11/03まであと</div>
+    <div class="days" id="countdown3"></div>
+    <div class="unit">日</div>
+  </div>
+</div>
 
-            let nextThanksgiving = getThanksgivingDate(today.getFullYear());
+<script>
+  function countdown(elementId, targetDate) {
+    const now = new Date();
+    const target = new Date(now.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+    if (now > target) {
+      target.setFullYear(target.getFullYear() + 1);
+    }
+    const diff = target.getTime() - now.getTime();
+    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    document.getElementById(elementId).textContent = days;
+  }
 
-            // 今年の感謝祭が既に過ぎていたら、来年の感謝祭をターゲットにする
-            if (today > nextThanksgiving) {
-                nextThanksgiving = getThanksgivingDate(today.getFullYear() + 1);
-            }
+  countdown('countdown1', new Date(2025, 9, 3)); // 10月3日
+  countdown('countdown2', new Date(2025, 9, 17)); // 10月17日
+  countdown('countdown3', new Date(2025, 10, 3)); // 11月3日
+</script>
 
-            const timeDiff = nextThanksgiving.getTime() - today.getTime();
-            const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-
-            countdownElement.textContent = daysRemaining;
-        }
-
-        calculateThanksgivingCountdown();
-    </script>
 </body>
 </html>

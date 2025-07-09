@@ -21,16 +21,12 @@ body {
   overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block; /* Prevents extra space below images */
-}
-
 .header {
   text-align: center;
   margin-bottom: 30px;
-  /* Removed flexbox properties as only h1 remains */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align items */
+  justify-content: center; /* Center content horizontally */
 }
 
 .header h1 {
@@ -38,12 +34,14 @@ img {
   font-weight: 700;
   color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(229, 128, 255, 0.3);
-  margin: 0; /* Removed horizontal margin */
+  margin: 0 20px; /* Add margin around h1 to make space for logos */
 }
 
-/* Remove .header-logo specific styles as it's moved */
 .header-logo {
-    display: none; /* Hide it from header */
+  height: 60px; /* Adjust size as needed */
+  width: auto;
+  object-fit: contain; /* Ensure image fits without distortion */
+  margin: 0 10px; /* Space between logo and title */
 }
 
 .countdown-container, .details-container {
@@ -135,34 +133,16 @@ img {
     text-align: left;
 }
 
-/* Remove .common-info-image and its related clearfix */
 .common-info-image {
-    display: none; /* Hide it */
+  width: 100px; /* Adjust size */
+  height: auto;
+  float: right; /* Float to the right */
+  margin-left: 15px; /* Space from text */
+  border-radius: 8px; /* Soften corners */
+  opacity: 0.8; /* Make it slightly transparent to blend with glassmorphism */
 }
 
-footer {
-  text-align: center;
-  margin-top: 40px;
-  padding: 20px;
-  background: rgba(22, 33, 62, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #e0e0e0;
-  font-size: 0.9em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.footer-logo {
-  height: 80px; /* Larger for footer */
-  margin-bottom: 10px;
-  opacity: 0.9;
+/* Clearfix for float */
+.info-card ul {
+    clear: both; /* Clear float after image */
 }

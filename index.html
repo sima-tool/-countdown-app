@@ -3,59 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>カウントダウン</title>
+<title>感謝祭カウントダウン</title>
 <style>
   body {
-    background-color: #f0f0f0;
-    font-family: sans-serif;
+    background-color: #f0f2f5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
   }
-  .container {
+  .countdown-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
   }
   .countdown-box {
-    background-color: black;
+    background-color: #1c1c1e;
     color: white;
     padding: 20px;
-    margin: 20px;
+    margin: 10px;
     border-radius: 15px;
     text-align: center;
-    width: 250px;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
   .date {
     font-size: 1.5em;
     margin-bottom: 10px;
+    font-weight: bold;
   }
   .days {
     font-size: 5em;
     font-weight: bold;
-    color: #00ff00;
+    color: #34c759;
   }
   .unit {
     font-size: 1.5em;
-    color: #00ff00;
+    color: #34c759;
+  }
+  .details-container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .info-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .info-card h2 {
+    font-size: 1.8em;
+    color: #1c1c1e;
+    border-bottom: 2px solid #34c759;
+    padding-bottom: 10px;
+    margin-top: 0;
+  }
+  .info-card ul {
+    padding-left: 20px;
+    list-style-type: none;
+  }
+  .info-card li {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  .info-card li strong {
+    color: #1c1c1e;
+  }
+  .info-card .sub-list {
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+  .info-card .sub-list li {
+    font-size: 1em;
+    margin-bottom: 5px;
   }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="countdown-container">
   <div class="countdown-box">
-    <div class="date">10/03まであと</div>
+    <div class="date">第1弾: 10/3まで</div>
     <div class="days" id="countdown1"></div>
     <div class="unit">日</div>
   </div>
   <div class="countdown-box">
-    <div class="date">10/17まであと</div>
+    <div class="date">第2弾: 10/17まで</div>
     <div class="days" id="countdown2"></div>
     <div class="unit">日</div>
   </div>
   <div class="countdown-box">
-    <div class="date">10/31まであと</div>
+    <div class="date">第3弾: 10/31まで</div>
     <div class="days" id="countdown3"></div>
     <div class="unit">日</div>
+  </div>
+</div>
+
+<div class="details-container">
+  <div class="info-card">
+    <h2>第1弾: 10/3(金)～5(日)</h2>
+    <p><strong>開催店舗:</strong> 門真･伏見･尼崎･高槻</p>
+  </div>
+  <div class="info-card">
+    <h2>第2弾: 10/17(金)～19(日)</h2>
+    <p><strong>開催店舗:</strong> 茨木･宇治･鶴見</p>
+  </div>
+  <div class="info-card">
+    <h2>第3弾: 10/31(金)～11/2(日)</h2>
+    <p><strong>開催店舗:</strong> 八尾･守口･豊中･右京</p>
+  </div>
+  <div class="info-card">
+    <h2>共通情報</h2>
+    <ul>
+      <li><strong>メーカー出展時間:</strong>
+        <ul class="sub-list">
+          <li>(金) 16:00～19:00</li>
+          <li>(土) 10:00～19:00</li>
+          <li>(日) 08:00～19:00</li>
+        </ul>
+      </li>
+      <li><strong>消耗品特売期間:</strong> 9/28(日)～11/9(日)</li>
+      <li><strong>電動工具特売期間:</strong> 開催3日間のみ（全店対応）</li>
+      <li><strong>ポイント2倍:</strong> 開催店舗、開催日のみ</li>
+    </ul>
   </div>
 </div>
 

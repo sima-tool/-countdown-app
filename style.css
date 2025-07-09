@@ -24,6 +24,9 @@ body {
 .header {
   text-align: center;
   margin-bottom: 30px;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align items */
+  justify-content: center; /* Center content horizontally */
 }
 
 .header h1 {
@@ -31,7 +34,14 @@ body {
   font-weight: 700;
   color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(229, 128, 255, 0.3);
-  margin: 0;
+  margin: 0 20px; /* Add margin around h1 to make space for logos */
+}
+
+.header-logo {
+  height: 60px; /* Adjust size as needed */
+  width: auto;
+  object-fit: contain; /* Ensure image fits without distortion */
+  margin: 0 10px; /* Space between logo and title */
 }
 
 .countdown-container, .details-container {
@@ -121,4 +131,18 @@ body {
 
 .info-card p {
     text-align: left;
+}
+
+.common-info-image {
+  width: 100px; /* Adjust size */
+  height: auto;
+  float: right; /* Float to the right */
+  margin-left: 15px; /* Space from text */
+  border-radius: 8px; /* Soften corners */
+  opacity: 0.8; /* Make it slightly transparent to blend with glassmorphism */
+}
+
+/* Clearfix for float */
+.info-card ul {
+    clear: both; /* Clear float after image */
 }

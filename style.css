@@ -14,7 +14,7 @@ body {
   color: #f0f0f0;
   font-family: 'Inter', 'Noto Sans JP', sans-serif;
   margin: 0;
-  padding: 20px 20px 120px 20px; /* Adjusted padding-bottom for fixed footer */
+  padding: 20px; /* Revert padding-bottom */
   background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460, #533483);
   background-size: 400% 400%;
   animation: animated-gradient 15s ease infinite;
@@ -134,28 +134,24 @@ img {
 
 footer {
   text-align: center;
-  /* Removed margin-top and margin-left/right as fixed positioning handles this */
+  margin-top: 40px; /* Restore margin-top */
   padding: 20px;
-  background: rgba(22, 33, 62, 0.9); /* Slightly less transparent for fixed footer */
+  background: rgba(22, 33, 62, 0.5); /* Revert transparency */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 0; /* Remove border-radius for full width */
-  box-shadow: 0 -4px 12px 0 rgba(0, 0, 0, 0.37); /* Shadow on top */
-  border-top: 1px solid rgba(255, 255, 255, 0.18); /* Only top border */
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
+  border-radius: 16px; /* Restore border-radius */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Restore box-shadow */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Restore full border */
   color: #e0e0e0;
   font-size: 0.9em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%; /* Full width */
-  position: fixed; /* Fixed position */
-  bottom: 0; /* Stick to the bottom */
-  left: 0; /* Align to left edge */
-  z-index: 1000; /* Ensure it's on top of other content */
+  max-width: 960px; /* Restore max-width */
+  margin-left: auto; /* Restore auto margins for centering */
+  margin-right: auto;
+  position: static; /* Remove fixed position */
 }
 
 footer p {

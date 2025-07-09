@@ -72,7 +72,7 @@ img {
 }
 
 .days {
-  font-size: 5em;
+  font-size: 3em; /* Reduced font size */
   font-weight: 700;
   color: #e580ff; /* 明るい紫色 */
   text-shadow: 0 0 8px rgba(229, 128, 255, 0.8);

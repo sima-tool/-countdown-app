@@ -218,3 +218,15 @@ footer p {
 #startButton:hover {
   background-color: #c060d0;
 }
+
+@media (max-width: 768px) {
+  .game-section {
+    max-width: 90vw; /* Make it 90% of viewport width on smaller screens */
+    padding: 15px; /* Slightly less padding */
+  }
+
+  /* Optionally adjust canvas margin if needed */
+  #gameCanvas {
+    margin: 15px auto;
+  }
+}

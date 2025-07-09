@@ -1,94 +1,124 @@
+@keyframes animated-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 body {
-    background-color: #fdf8e1; /* 明るい砂色 */
-    font-family: 'Noto Sans JP', sans-serif;
-    margin: 0;
-    padding: 20px;
-  }
-  .header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .header h1 {
-    font-family: 'Mochiy Pop One', sans-serif;
-    font-size: 4rem;
-    color: #c52f2f; /* 首里城のような赤 */
-    text-shadow: 3px 3px 5px rgba(0,0,0,0.2);
-    margin: 0;
-  }
-  .countdown-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-  .countdown-box {
-    background-color: #c52f2f; /* 赤 */
-    color: white;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 15px;
-    text-align: center;
-    width: 280px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    border: 3px solid #a22525;
-  }
-  .date {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  .days {
-    font-size: 5em;
-    font-weight: bold;
-    color: #ffd700; /* 黄色 */
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
-  }
-  .unit {
-    font-size: 1.5em;
-    color: #ffd700;
-  }
-  .details-container {
-    max-width: 960px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  .info-card {
-    background-color: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border: 2px solid #ddd;
-  }
-  .info-card h2 {
-    font-size: 1.8em;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 700;
-    color: #c52f2f;
-    border-bottom: 3px solid #ffd700;
-    padding-bottom: 10px;
-    margin-top: 0;
-  }
-  .info-card ul {
-    padding-left: 0;
-    list-style-type: none;
-  }
-  .info-card li {
-    font-size: 1.1em;
-    margin-bottom: 12px;
-    line-height: 1.6;
-  }
-  .info-card li strong {
-    color: #333;
-  }
-  .info-card .sub-list {
-    padding-left: 20px;
-    margin-top: 8px;
-    list-style-type: '・';
-  }
-  .info-card .sub-list li {
-    font-size: 1em;
-    margin-bottom: 5px;
-  }
+  color: #f0f0f0;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460, #533483);
+  background-size: 400% 400%;
+  animation: animated-gradient 15s ease infinite;
+  overflow-x: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(229, 128, 255, 0.3);
+  margin: 0;
+}
+
+.countdown-container, .details-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+}
+
+.countdown-box, .info-card {
+  background: rgba(22, 33, 62, 0.5); /* 半透明の背景 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+}
+
+.countdown-box {
+  width: 280px;
+}
+
+.date {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #e0e0e0;
+}
+
+.days {
+  font-size: 5em;
+  font-weight: 700;
+  color: #e580ff; /* 明るい紫色 */
+  text-shadow: 0 0 8px rgba(229, 128, 255, 0.8);
+}
+
+.unit {
+  font-size: 1.5em;
+  color: #e580ff;
+}
+
+.details-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.info-card h2 {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #ffffff;
+  border-bottom: 2px solid #e580ff;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.info-card ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.info-card li {
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.info-card li strong {
+  color: #f0f0f0;
+  font-weight: 700;
+}
+
+.info-card .sub-list {
+  padding-left: 20px;
+  margin-top: 8px;
+  list-style-type: '→ ';
+}
+
+.info-card .sub-list li {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.info-card p {
+    text-align: left;
+}

@@ -149,3 +149,27 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
+
+footer p {
+    margin-bottom: 15px; /* Add space below copyright */
+}
+
+.social-links {
+  display: flex;
+  gap: 20px; /* Space between icons */
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #e0e0e0; /* Icon color */
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #e580ff; /* Hover color */
+}
+
+.social-links svg {
+  width: 30px; /* Icon size */
+  height: 30px;
+}

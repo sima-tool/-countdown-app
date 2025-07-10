@@ -63,6 +63,11 @@
 <section class="game-section">
   <h2>ブロック崩しゲーム</h2>
   <div id="gameInfo">スコア: <span id="score">0</span> | 残機: <span id="lives">3</span></div>
+  <div id="speedControl">
+    <label><input type="radio" name="speed" value="1" checked> 遅い</label>
+    <label><input type="radio" name="speed" value="2"> 普通</label>
+    <label><input type="radio" name="speed" value="3"> 速い</label>
+  </div>
   <canvas id="gameCanvas"></canvas>
   <button id="startButton">ゲーム開始</button>
 </section>
@@ -146,14 +151,20 @@
   let dx = 2; // Ball speed x
   let dy = -2; // Ball speed y
 
+  function setSpeed() {
+    const speed = document.querySelector('input[name="speed"]:checked').value;
+    dx = 2 * speed;
+    dy = -2 * speed;
+  }
+
   // Brick properties
-  const brickRowCount = 4;
-  const brickColumnCount = 4;
-  const brickWidth = 60;
+  const brickRowCount = 5;
+  const brickColumnCount = 10;
+  const brickWidth = 40;
   const brickHeight = 20;
   const brickPadding = 10;
   const brickOffsetTop = 30;
-  const brickOffsetLeft = 30;
+  const brickOffsetLeft = 55;
 
   let bricks = [];
   function initBricks() {
@@ -258,8 +269,7 @@
           // Reset ball and paddle position for next life
           x = canvas.width / 2;
           y = canvas.height - 30;
-          dx = 2;
-          dy = -2;
+          setSpeed(); // Reset speed
           paddleX = (canvas.width - paddleWidth) / 2;
         }
       }
@@ -296,10 +306,9 @@
     scoreDisplay.textContent = score;
     livesDisplay.textContent = lives;
     initBricks();
+    setSpeed(); // Set speed on start
     x = canvas.width / 2;
     y = canvas.height - 30;
-    dx = 2;
-    dy = -2;
     paddleX = (canvas.width - paddleWidth) / 2;
     gameRunning = true;
     startButton.style.display = 'none';

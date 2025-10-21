@@ -28,6 +28,10 @@
     <div class="date">第3弾: 10/31まで</div>
     <div class="days" id="countdown3"></div>
   </div>
+  <div class="countdown-box">
+    <div class="date">初売り展示会: 1/5まで</div>
+    <div class="days" id="countdown4"></div>
+  </div>
 </div>
 
 <div class="details-container">
@@ -42,6 +46,10 @@
   <div class="info-card">
     <h2>第3弾: 10/31(金)～11/2(日)</h2>
     <p><strong>開催店舗:</strong> 八尾･守口･豊中･右京</p>
+  </div>
+  <div class="info-card">
+    <h2>初売り展示会: 1/5(日)</h2>
+    <p>毎年恒例の初売り展示会です。</p>
   </div>
   <div class="info-card">
     <h2>共通情報</h2>
@@ -64,8 +72,8 @@
   <h2>ブロック崩しゲーム</h2>
   <div id="gameInfo">スコア: <span id="score">0</span> | 残機: <span id="lives">3</span></div>
   <div id="speedControl">
-    <label><input type="radio" name="speed" value="1" checked> 遅い</label>
-    <label><input type="radio" name="speed" value="2"> 普通</label>
+    <label><input type="radio" name="speed" value="1"> 遅い</label>
+    <label><input type="radio" name="speed" value="2" checked> 普通</label>
     <label><input type="radio" name="speed" value="3"> 速い</label>
   </div>
   <canvas id="gameCanvas"></canvas>
@@ -122,6 +130,7 @@
   countdown('countdown1', 10, 3, 16, 0); // 10月3日 16:00
   countdown('countdown2', 10, 17, 16, 0); // 10月17日 16:00
   countdown('countdown3', 10, 31, 16, 0); // 10月31日 16:00
+  countdown('countdown4', 1, 5, 0, 0); // 1月5日 00:00
 
 
   // Breakout Game Logic

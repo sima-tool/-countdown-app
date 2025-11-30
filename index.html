@@ -1,356 +1,399 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
-<title>感謝祭スケジュール</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>大売出しカウントダウン</title>
+  <link rel="icon" href="img/narukami_001.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="header">
-  <h1>感謝祭スケジュール</h1>
-</header>
+  <header class="header">
+    <h1>大売出しカウントダウン</h1>
+  </header>
 
-<div class="countdown-container">
-  <div class="countdown-box">
-    <div class="date">第1弾: 10/3まで</div>
-    <div class="days" id="countdown1"></div>
+  <div class="countdown-container">
+    <div class="countdown-box">
+      <div class="date">第1弾: 10/3まで</div>
+      <div class="days" id="countdown1"></div>
+    </div>
+    <div class="countdown-box">
+      <div class="date">第2弾: 10/17まで</div>
+      <div class="days" id="countdown2"></div>
+    </div>
+    <div class="countdown-box">
+      <div class="date">第3弾: 10/31まで</div>
+      <div class="days" id="countdown3"></div>
+    </div>
+    <div class="countdown-box">
+      <div class="date">初売り展示会: 1/5まで</div>
+      <div class="days" id="countdown4"></div>
+    </div>
   </div>
-  <div class="countdown-box">
-    <div class="date">第2弾: 10/17まで</div>
-    <div class="days" id="countdown2"></div>
-  </div>
-  <div class="countdown-box">
-    <div class="date">第3弾: 10/31まで</div>
-    <div class="days" id="countdown3"></div>
-  </div>
-  <div class="countdown-box">
-    <div class="date">初売り展示会: 1/5まで</div>
-    <div class="days" id="countdown4"></div>
-  </div>
-</div>
 
-<div class="details-container">
-  <div class="info-card">
-    <h2>第1弾: 10/3(金)～5(日)</h2>
-    <p><strong>開催店舗:</strong> 門真･伏見･尼崎･高槻</p>
+  <div class="details-container">
+    <div class="info-card">
+      <h2>第1弾: 10/3(金)～5(日)</h2>
+      <p><strong>開催店舗:</strong> 門真･伏見･尼崎･高槻</p>
+    </div>
+    <div class="info-card">
+      <h2>第2弾: 10/17(金)～19(日)</h2>
+      <p><strong>開催店舗:</strong> 茨木･宇治･鶴見</p>
+    </div>
+    <div class="info-card">
+      <h2>第3弾: 10/31(金)～11/2(日)</h2>
+      <p><strong>開催店舗:</strong> 八尾･守口･豊中･右京</p>
+    </div>
+    <div class="info-card">
+      <h2>初売り展示会: 1/5(日)</h2>
+      <p>毎年恒例の初売り展示会です。</p>
+    </div>
+    <div class="info-card">
+      <h2>共通情報</h2>
+      <ul>
+        <li><strong>メーカー出展時間:</strong>
+          <ul class="sub-list">
+            <li>(金) 16:00～19:00</li>
+            <li>(土) 10:00～19:00</li>
+            <li>(日) 08:00～19:00</li>
+          </ul>
+        </li>
+        <li><strong>消耗品特売期間:</strong> 9/28(日)～11/9(日)</li>
+        <li><strong>電動工具特売期間:</strong> 開催3日間のみ（全店対応）</li>
+        <li><strong>ポイント2倍:</strong> 開催店舗、開催日のみ</li>
+      </ul>
+    </div>
   </div>
-  <div class="info-card">
-    <h2>第2弾: 10/17(金)～19(日)</h2>
-    <p><strong>開催店舗:</strong> 茨木･宇治･鶴見</p>
-  </div>
-  <div class="info-card">
-    <h2>第3弾: 10/31(金)～11/2(日)</h2>
-    <p><strong>開催店舗:</strong> 八尾･守口･豊中･右京</p>
-  </div>
-  <div class="info-card">
-    <h2>初売り展示会: 1/5(日)</h2>
-    <p>毎年恒例の初売り展示会です。</p>
-  </div>
-  <div class="info-card">
-    <h2>共通情報</h2>
-    <ul>
-      <li><strong>メーカー出展時間:</strong>
-        <ul class="sub-list">
-          <li>(金) 16:00～19:00</li>
-          <li>(土) 10:00～19:00</li>
-          <li>(日) 08:00～19:00</li>
-        </ul>
-      </li>
-      <li><strong>消耗品特売期間:</strong> 9/28(日)～11/9(日)</li>
-      <li><strong>電動工具特売期間:</strong> 開催3日間のみ（全店対応）</li>
-      <li><strong>ポイント2倍:</strong> 開催店舗、開催日のみ</li>
-    </ul>
-  </div>
-</div>
 
-<section class="game-section">
-  <h2>ブロック崩しゲーム</h2>
-  <div id="gameInfo">スコア: <span id="score">0</span> | 残機: <span id="lives">3</span></div>
-  <div id="speedControl">
-    <label><input type="radio" name="speed" value="1"> 遅い</label>
-    <label><input type="radio" name="speed" value="2" checked> 普通</label>
-    <label><input type="radio" name="speed" value="3"> 速い</label>
-  </div>
-  <canvas id="gameCanvas"></canvas>
-  <button id="startButton">ゲーム開始</button>
-</section>
+  <section class="game-section">
+    <h2>ブロック崩しゲーム</h2>
+    <div id="gameInfo">スコア: <span id="score">0</span> | 残機: <span id="lives">3</span></div>
+    <div id="speedControl">
+      <label><input type="radio" name="speed" value="1"> 遅い</label>
+      <label><input type="radio" name="speed" value="2" checked> 普通</label>
+      <label><input type="radio" name="speed" value="3"> 速い</label>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <button id="startButton">ゲーム開始</button>
+  </section>
 
-<script>
-  // Countdown Logic
-  function countdown(elementId, targetMonth, targetDay, targetHour, targetMinute) {
+  <script>
+    // Countdown Logic
+    function countdown(elementId, targetMonth, targetDay, targetHour, targetMinute) {
       const updateCountdown = () => {
-          const now = new Date();
-          let target = new Date(now.getFullYear(), targetMonth - 1, targetDay, targetHour, targetMinute, 0); // Month is 0-indexed
+        const now = new Date();
+        let target = new Date(now.getFullYear(), targetMonth - 1, targetDay, targetHour, targetMinute, 0); // Month is 0-indexed
 
-          // Rollover logic: If current time is past target time for this year, set to next year
-          if (now > target) {
-              target.setFullYear(target.getFullYear() + 1);
-          }
+        // Rollover logic: If current time is past target time for this year, set to next year
+        if (now > target) {
+          target.setFullYear(target.getFullYear() + 1);
+        }
 
-          const diff = target.getTime() - now.getTime();
+        const diff = target.getTime() - now.getTime();
 
-          // Calculate days, hours, minutes, seconds
-          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        // Calculate days, hours, minutes, seconds
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-          // Format output with leading zeros
-          const formattedHours = String(hours).padStart(2, '0');
-          const formattedMinutes = String(minutes).padStart(2, '0');
-          const formattedSeconds = String(seconds).padStart(2, '0');
+        // Format output with leading zeros
+        const formattedHours = String(hours).padStart(2, '0');
+        const formattedMinutes = String(minutes).padStart(2, '0');
+        const formattedSeconds = String(seconds).padStart(2, '0');
 
-          // Update the display
-          const displayElement = document.getElementById(elementId);
-          if (days > 0) {
-              displayElement.textContent = `${days}日 ${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
-          } else if (diff > 0) { // Only show time if less than a day, but still positive
-              displayElement.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
-          } else { // Countdown finished
-              displayElement.textContent = `00:00:00`;
-          }
+        // Update the display
+        const displayElement = document.getElementById(elementId);
+        if (days > 0) {
+          displayElement.textContent = `${days}日 ${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+        } else if (diff > 0) { // Only show time if less than a day, but still positive
+          displayElement.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+        } else { // Countdown finished
+          displayElement.textContent = `00:00:00`;
+        }
 
-          // If countdown finishes, clear interval
-          if (diff < 0) {
-              clearInterval(interval);
-          }
+        // If countdown finishes, clear interval
+        if (diff < 0) {
+          clearInterval(interval);
+        }
       };
 
       // Run immediately and then every second
       updateCountdown();
       const interval = setInterval(updateCountdown, 1000);
-  }
-
-  // Call countdown for each event
-  countdown('countdown1', 10, 3, 16, 0); // 10月3日 16:00
-  countdown('countdown2', 10, 17, 16, 0); // 10月17日 16:00
-  countdown('countdown3', 10, 31, 16, 0); // 10月31日 16:00
-  countdown('countdown4', 1, 5, 0, 0); // 1月5日 00:00
-
-
-  // Breakout Game Logic
-  const canvas = document.getElementById('gameCanvas');
-  const ctx = canvas.getContext('2d');
-
-  // Set canvas dimensions for game logic
-  canvas.width = 600;
-  canvas.height = 400;
-  const scoreDisplay = document.getElementById('score');
-  const livesDisplay = document.getElementById('lives');
-  const startButton = document.getElementById('startButton');
-
-  let score = 0;
-  let lives = 3;
-  let gameRunning = false;
-
-  // Paddle properties
-  const paddleHeight = 10;
-  const paddleWidth = 75;
-  let paddleX = (canvas.width - paddleWidth) / 2;
-
-  // Ball properties
-  const ballRadius = 10;
-  let x = canvas.width / 2;
-  let y = canvas.height - 30;
-  let dx = 2; // Ball speed x
-  let dy = -2; // Ball speed y
-
-  function setSpeed() {
-    const speed = document.querySelector('input[name="speed"]:checked').value;
-    dx = 2 * speed;
-    dy = -2 * speed;
-  }
-
-  // Brick properties
-  const brickRowCount = 5;
-  const brickColumnCount = 10;
-  const brickWidth = 40;
-  const brickHeight = 20;
-  const brickPadding = 10;
-  const brickOffsetTop = 30;
-  const brickOffsetLeft = 55;
-
-  let bricks = [];
-  function initBricks() {
-    bricks = [];
-    for (let c = 0; c < brickColumnCount; c++) {
-      bricks[c] = [];
-      for (let r = 0; r < brickRowCount; r++) {
-        bricks[c][r] = { x: 0, y: 0, status: 1 }; // status 1 means active
-      }
     }
-  }
 
-  function drawBall() {
-    ctx.beginPath();
-    ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-    ctx.fillStyle = '#e580ff';
-    ctx.fill();
-    ctx.closePath();
-  }
+    // Call countdown for each event
+    countdown('countdown1', 10, 3, 16, 0); // 10月3日 16:00
+    countdown('countdown2', 10, 17, 16, 0); // 10月17日 16:00
+    countdown('countdown3', 10, 31, 16, 0); // 10月31日 16:00
+    countdown('countdown4', 1, 5, 8, 0); // 1月5日 08:00
 
-  function drawPaddle() {
-    ctx.beginPath();
-    ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = '#0095DD';
-    ctx.fill();
-    ctx.closePath();
-  }
 
-  function drawBricks() {
-    for (let c = 0; c < brickColumnCount; c++) {
-      for (let r = 0; r < brickRowCount; r++) {
-        if (bricks[c][r].status === 1) {
-          const brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
-          const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
-          bricks[c][r].x = brickX;
-          bricks[c][r].y = brickY;
-          ctx.beginPath();
-          ctx.rect(brickX, brickY, brickWidth, brickHeight);
-          ctx.fillStyle = '#00DD95';
-          ctx.fill();
-          ctx.closePath();
+    // Breakout Game Logic
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas dimensions for game logic
+    canvas.width = 600;
+    canvas.height = 400;
+    const scoreDisplay = document.getElementById('score');
+    const livesDisplay = document.getElementById('lives');
+    const startButton = document.getElementById('startButton');
+
+    let score = 0;
+    let lives = 3;
+    let gameRunning = false;
+
+    // Paddle properties
+    const paddleHeight = 10;
+    const paddleWidth = 75;
+    let paddleX = (canvas.width - paddleWidth) / 2;
+
+    // Ball properties
+    const ballRadius = 10;
+    let x = canvas.width / 2;
+    let y = canvas.height - 30;
+    let dx = 2; // Ball speed x
+    let dy = -2; // Ball speed y
+
+    function setSpeed() {
+      const speed = document.querySelector('input[name="speed"]:checked').value;
+      dx = 2 * speed;
+      dy = -2 * speed;
+    }
+
+    // Brick properties
+    const brickRowCount = 5;
+    const brickColumnCount = 10;
+    const brickWidth = 40;
+    const brickHeight = 20;
+    const brickPadding = 10;
+    const brickOffsetTop = 30;
+    const brickOffsetLeft = 55;
+
+    let bricks = [];
+    function initBricks() {
+      bricks = [];
+      for (let c = 0; c < brickColumnCount; c++) {
+        bricks[c] = [];
+        for (let r = 0; r < brickRowCount; r++) {
+          bricks[c][r] = { x: 0, y: 0, status: 1 }; // status 1 means active
         }
       }
     }
-  }
 
-  function collisionDetection() {
-    for (let c = 0; c < brickColumnCount; c++) {
-      for (let r = 0; r < brickRowCount; r++) {
-        const b = bricks[c][r];
-        if (b.status === 1) {
-          if (
-            x > b.x &&
-            x < b.x + brickWidth &&
-            y > b.y &&
-            y < b.y + brickHeight
-          ) {
-            dy = -dy;
-            b.status = 0; // Mark brick as broken
-            score++;
-            scoreDisplay.textContent = score;
-            if (score === brickRowCount * brickColumnCount) {
-              alert('おめでとうございます！全ブロック破壊！');
-              gameRunning = false;
-              startButton.style.display = 'block';
+    function drawBall() {
+      ctx.beginPath();
+      ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+      ctx.fillStyle = '#e580ff';
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    function drawPaddle() {
+      ctx.beginPath();
+      ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+      ctx.fillStyle = '#0095DD';
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    function drawBricks() {
+      for (let c = 0; c < brickColumnCount; c++) {
+        for (let r = 0; r < brickRowCount; r++) {
+          if (bricks[c][r].status === 1) {
+            const brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
+            const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
+            bricks[c][r].x = brickX;
+            bricks[c][r].y = brickY;
+            ctx.beginPath();
+            ctx.rect(brickX, brickY, brickWidth, brickHeight);
+            ctx.fillStyle = '#00DD95';
+            ctx.fill();
+            ctx.closePath();
+          }
+        }
+      }
+    }
+
+    function collisionDetection() {
+      for (let c = 0; c < brickColumnCount; c++) {
+        for (let r = 0; r < brickRowCount; r++) {
+          const b = bricks[c][r];
+          if (b.status === 1) {
+            if (
+              x > b.x &&
+              x < b.x + brickWidth &&
+              y > b.y &&
+              y < b.y + brickHeight
+            ) {
+              dy = -dy;
+              b.status = 0; // Mark brick as broken
+              score++;
+              scoreDisplay.textContent = score;
+              if (score === brickRowCount * brickColumnCount) {
+                alert('おめでとうございます！全ブロック破壊！');
+                gameRunning = false;
+                startButton.style.display = 'block';
+              }
             }
           }
         }
       }
     }
-  }
 
-  function draw() {
-    if (!gameRunning) return;
+    function draw() {
+      if (!gameRunning) return;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
 
-    drawBricks();
-    drawBall();
-    drawPaddle();
-    collisionDetection();
+      drawBricks();
+      drawBall();
+      drawPaddle();
+      collisionDetection();
 
-    // Ball bounces off walls
-    if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-      dx = -dx;
-    }
-    if (y + dy < ballRadius) {
-      dy = -dy;
-    } else if (y + dy > canvas.height - ballRadius) {
-      // Ball hits paddle
-      if (x > paddleX && x < paddleX + paddleWidth) {
+      // Ball bounces off walls
+      if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+        dx = -dx;
+      }
+      if (y + dy < ballRadius) {
         dy = -dy;
-      } else {
-        // Ball hits bottom (game over for one life)
-        lives--;
-        livesDisplay.textContent = lives;
-        if (lives === 0) {
-          alert('ゲームオーバー！');
-          gameRunning = false;
-          startButton.style.display = 'block';
+      } else if (y + dy > canvas.height - ballRadius) {
+        // Ball hits paddle
+        if (x > paddleX && x < paddleX + paddleWidth) {
+          dy = -dy;
         } else {
-          // Reset ball and paddle position for next life
-          x = canvas.width / 2;
-          y = canvas.height - 30;
-          setSpeed(); // Reset speed
-          paddleX = (canvas.width - paddleWidth) / 2;
+          // Ball hits bottom (game over for one life)
+          lives--;
+          livesDisplay.textContent = lives;
+          if (lives === 0) {
+            alert('ゲームオーバー！');
+            gameRunning = false;
+            startButton.style.display = 'block';
+          } else {
+            // Reset ball and paddle position for next life
+            x = canvas.width / 2;
+            y = canvas.height - 30;
+            setSpeed(); // Reset speed
+            paddleX = (canvas.width - paddleWidth) / 2;
+          }
         }
       }
+
+      x += dx;
+      y += dy;
+
+      requestAnimationFrame(draw);
     }
 
-    x += dx;
-    y += dy;
+    // Mouse/Touch control for paddle
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      // Calculate scale factor to map mouse coordinates to canvas internal coordinates
+      const scaleX = canvas.width / rect.width;
+      const relativeX = (e.clientX - rect.left) * scaleX;
 
-    requestAnimationFrame(draw);
-  }
+      if (relativeX > 0 && relativeX < canvas.width) {
+        paddleX = relativeX - paddleWidth / 2;
+      }
+    });
 
-  // Mouse/Touch control for paddle
-  canvas.addEventListener('mousemove', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    // Calculate scale factor to map mouse coordinates to canvas internal coordinates
-    const scaleX = canvas.width / rect.width;
-    const relativeX = (e.clientX - rect.left) * scaleX;
+    canvas.addEventListener('touchmove', (e) => {
+      e.preventDefault(); // Prevent scrolling while playing
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const touchX = (e.touches[0].clientX - rect.left) * scaleX;
 
-    if (relativeX > 0 && relativeX < canvas.width) {
-      paddleX = relativeX - paddleWidth / 2;
+      if (touchX > 0 && touchX < canvas.width) {
+        paddleX = touchX - paddleWidth / 2;
+      }
+    }, { passive: false });
+
+    function startGame() {
+      score = 0;
+      lives = 3;
+      scoreDisplay.textContent = score;
+      livesDisplay.textContent = lives;
+      initBricks();
+      setSpeed(); // Set speed on start
+      x = canvas.width / 2;
+      y = canvas.height - 30;
+      paddleX = (canvas.width - paddleWidth) / 2;
+      gameRunning = true;
+      startButton.style.display = 'none';
+      draw();
     }
-  });
 
-  canvas.addEventListener('touchmove', (e) => {
-    const touchX = e.touches[0].clientX - canvas.offsetLeft;
-    if (touchX > 0 && touchX < canvas.width) {
-      paddleX = touchX - paddleWidth / 2;
-    }
-  });
+    startButton.addEventListener('click', startGame);
 
-  function startGame() {
-    score = 0;
-    lives = 3;
-    scoreDisplay.textContent = score;
-    livesDisplay.textContent = lives;
+    // Initial setup
     initBricks();
-    setSpeed(); // Set speed on start
-    x = canvas.width / 2;
-    y = canvas.height - 30;
-    paddleX = (canvas.width - paddleWidth) / 2;
-    gameRunning = true;
-    startButton.style.display = 'none';
-    draw();
-  }
+    drawBricks();
+    drawPaddle();
+    drawBall();
 
-  startButton.addEventListener('click', startGame);
+    // Mouse tracking for spotlight effect
+    document.querySelectorAll('.countdown-box').forEach(box => {
+      box.addEventListener('mousemove', e => {
+        const rect = box.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        box.style.setProperty('--mouse-x', `${x}px`);
+        box.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  </script>
 
-  // Initial setup
-  initBricks();
-  drawBricks();
-  drawPaddle();
-  drawBall();
-</script>
-
-<footer>
-  <p>Copyright © 2025 Shimabukuro Co.,Ltd</p>
-  <div class="social-links">
-    <a href="https://www.youtube.com/@shimacorpo_Channel" target="_blank" aria-label="YouTube">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-    </a>
-    <a href="https://www.tiktok.com/@shimacorpo_Channel" target="_blank" aria-label="TikTok">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tiktok"><path d="M12 12a4 4 0 1 0 4 4V8a8 8 0 1 1-8-8h.1"></path></svg>
-    </a>
-    <a href="https://x.com/shimacorpo" target="_blank" aria-label="X (Twitter)">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-    </a>
-    <a href="https://www.instagram.com/shima.kadoma/" target="_blank" aria-label="Instagram">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-    </a>
-  </div>
-</footer>
+  <footer>
+    <p>Copyright © 2025 Shimabukuro Co.,Ltd</p>
+    <div class="social-links">
+      <a href="https://www.youtube.com/@shimacorpo_Channel" target="_blank" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-youtube">
+          <path
+            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z">
+          </path>
+          <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+        </svg>
+      </a>
+      <a href="https://www.tiktok.com/@shimacorpo_Channel" target="_blank" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-tiktok">
+          <path d="M12 12a4 4 0 1 0 4 4V8a8 8 0 1 1-8-8h.1"></path>
+        </svg>
+      </a>
+      <a href="https://x.com/shimacorpo" target="_blank" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-twitter">
+          <path
+            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+          </path>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/shima.kadoma/" target="_blank" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-instagram">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+    </div>
+  </footer>
 
 </body>
+
 </html>
